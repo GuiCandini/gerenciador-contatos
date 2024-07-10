@@ -1,7 +1,9 @@
+import { Alert } from "react-bootstrap";
+
 function NotFound() {
     return (
         <main>
-            <h1>ERROR 404 NOT FOUND</h1>
+            <Alert variant="danger" className="mt-2 text-center">ERROR 404 NOT FOUND</Alert>
         </main>
     );
 }

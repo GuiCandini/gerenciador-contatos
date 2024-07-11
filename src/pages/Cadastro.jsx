@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 function Cadastro() {
 
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit, formState: {errors}} = useForm();
 
     function cadastrar(data) {
         console.log(data);
@@ -20,8 +20,9 @@ function Cadastro() {
                         type="text"
                         id="nome"
                         className="form-control"
-                        {...register("nome")}
+                        {...register("nome", {required: true, maxLength:150})}
                     />
+                    {errors.nome && <small className="invalid">O nome é inválido!</small>}
                 </div>
                 <div>
                     <label htmlFor="email">Email</label>
@@ -29,8 +30,9 @@ function Cadastro() {
                         type="email"
                         id="email"
                         className="form-control"
-                        {...register("email")}
+                        {...register("email", {required: true})}
                     />
+                    {errors.email && <small className="invalid">O email é inválido!</small>}
                 </div>
                 <div>
                     <label htmlFor="senha">Senha</label>
@@ -38,10 +40,11 @@ function Cadastro() {
                         type="password"
                         id="senha"
                         className="form-control"
-                        {...register("senha")}
+                        {...register("senha", {required:true, minLength:6})}
                     />
+                    {errors.senha && <small className="invalid">A senha é inválida!</small>}
                 </div>
-                <Button className="mt-1 w-100" type="submit">
+                <Button variant="dark" className="mt-1 w-100" type="submit">
                     Cadastrar
                 </Button>
                 <Button variant="outline-danger" className="mt-1 w-100" type="button">

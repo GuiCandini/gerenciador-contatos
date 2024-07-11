@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Footer from "./components/Footer";
 import Politicas from "./pages/Politicas";
+import NovaTarefa from "./pages/NovaTarefa";
 //BrouwserRouter: componente essencial para conduzir o roteamento do navegador
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/ajuda" element={<Ajuda />} />
           <Route path="/politicas" element={<Politicas />} />
+          <Route path="/novatarefa" element={<NovaTarefa/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

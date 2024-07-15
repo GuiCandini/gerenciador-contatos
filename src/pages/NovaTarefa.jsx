@@ -1,12 +1,28 @@
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { addTarefa } from "../firebase/tarefas";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function NovaTarefa() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { 
+    register, 
+    handleSubmit, 
+    formState: { errors } 
+  } = useForm();
+
+  const navigate = useNavigate();
 
   function salvarTarefa(data) {
-    console.log("Salvar tarefa");
-    console.log(data);
+    //Os dados do formulário são passados para a função de inserir
+    //then => aguarda a inserção da tarefa para então exibir o toast
+    addTarefa(data).then(() => {
+      toast.success("Tarefa adicionada com sucesso!");
+      //Redirecionar o usuário para /tarefas
+      navigate("/tarefas");
+    }).catch(() => {
+      toast.error("Erro ao adicionar tarefa!")
+    })
   }
 
   return (
@@ -42,7 +58,7 @@ function NovaTarefa() {
             {...register("dataConclusao")}
             />
         </div>
-        <div className="form-check">
+        <div className="form-check mt-2">
           <input 
             type="checkbox" 
             id="concluido" 
@@ -67,7 +83,7 @@ function NovaTarefa() {
             <option value="Outros">Outros</option>
           </select>
         </div>
-        <Button variant="dark" className="w-100 mt-1" type="submit">
+        <Button variant="dark" className="w-100 mt-3" type="submit">
           Salvar Tarefa
         </Button>
       </form>

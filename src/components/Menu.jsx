@@ -15,7 +15,8 @@ function Menu() {
                             <Link className="nav-link" to="/login">Login</Link>
                             <Link className="nav-link" to="/cadastro">Cadastro</Link>
                             <Link className="nav-link" to="/ajuda">Ajuda</Link>
-                            <Link className="nav-link" to="/novatarefa">Nova Tarefa</Link>
+                            <Link className="nav-link" to="/tarefas">Tarefas</Link>
+                            {/* <Link className="nav-link" to="/novatarefa">Nova Tarefa</Link> */}
                         </Nav>
                     </NavbarCollapse>
                 </Container>

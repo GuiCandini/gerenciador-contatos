@@ -5,7 +5,7 @@ function Politicas() {
         <main>
             <h1>Politicas de Privacidade</h1><Container fluid>
                 <hr />
-                <Accordion defaultActiveKey="0">
+                <Accordion defaultActiveKey="">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>
                             Coleta de Dados Pessoais

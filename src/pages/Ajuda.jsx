@@ -6,7 +6,7 @@ function Ajuda() {
             <Container fluid>
                 <h1>Ajuda</h1>
                 <hr />
-                <Accordion defaultActiveKey="0">
+                <Accordion defaultActiveKey="">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>
                             Sobre o nosso sistema

@@ -1,9 +1,24 @@
 import { Link } from "react-router-dom";
-import { Container, Navbar, NavbarCollapse, Nav } from "react-bootstrap";
+import { Container, Navbar, NavbarCollapse, Nav, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../firebase/auth";
+import { useContext } from "react";
+import { UsuarioContext } from "../contexts/UsuarioContext";
+
+
 //Link: este componente habilita o SPA(Single-page application)
 //Se houver links externos, utilize a tag <a>
 
 function Menu() {
+    const usuario = useContext(UsuarioContext);
+    const navigate = useNavigate();
+
+    function handleLogout() {
+        logout().then(() => {
+            navigate("/login");
+        });
+    }
+
     return (
         <header>
             <Navbar bg="dark" variant="dark" expand="md">
@@ -12,11 +27,14 @@ function Menu() {
                     <Navbar.Toggle />
                     <NavbarCollapse>
                         <Nav className="ms-auto">
-                            <Link className="nav-link" to="/login">Login</Link>
-                            <Link className="nav-link" to="/cadastro">Cadastro</Link>
+                            {usuario && <span className="text-light nav-link">{usuario.displayName}</span>}
+                            {!usuario && <Link className="nav-link" to="/login">Login</Link>}
+                            {!usuario && <Link className="nav-link" to="/cadastro">Cadastro</Link>}
+                            {usuario && <Link className="nav-link" to="/tarefas">Tarefas</Link>}
                             <Link className="nav-link" to="/ajuda">Ajuda</Link>
-                            <Link className="nav-link" to="/tarefas">Tarefas</Link>
-                            {/* <Link className="nav-link" to="/novatarefa">Nova Tarefa</Link> */}
+                            {usuario && <Button variant="outline-light" className="w-25" onClick={handleLogout}>
+                                Logout
+                            </Button>}
                         </Nav>
                     </NavbarCollapse>
                 </Container>

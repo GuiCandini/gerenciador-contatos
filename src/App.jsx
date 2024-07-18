@@ -15,19 +15,26 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/config";
 import { UsuarioContext } from "./contexts/UsuarioContext";
+import Loader from "./components/Loader";
 //BrouwserRouter: componente essencial para conduzir o roteamento do navegador
 
 function App() {
   //O estado de usuario indica se ele está logado ou não na aplicação
   //null = deslogado
   const [usuarioLogado, setUsuarioLogado] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     //monitora/detecta o usuário conectado
     onAuthStateChanged(auth, (user) => {
       setUsuarioLogado(user);
+      setLoading(false);
     });
   }, []);
+
+  if(loading) {
+    return <Loader />
+  }
 
   return (
     <>

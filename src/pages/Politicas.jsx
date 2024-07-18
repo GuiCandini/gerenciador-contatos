@@ -31,7 +31,7 @@ function Politicas() {
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
-                <Button className="p-2 mt-2">Entre em contato</Button>
+                <Button className="p-2 mt-2" variant="primary">Entre em contato</Button>
             </Container>
         </main>
     );

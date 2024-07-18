@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAJHrMoHa0nT1ylMdQdVcfCz6SIRuht1As",
-  authDomain: "my-task-88191.firebaseapp.com",
-  projectId: "my-task-88191",
-  storageBucket: "my-task-88191.appspot.com",
-  messagingSenderId: "720625515484",
-  appId: "1:720625515484:web:2d795763983c77d9b3ad19"
+  apiKey: "AIzaSyAO18eRnUbVy2lZ5QtmEjgdLU5JRBZbRSY",
+  authDomain: "gerenciador-contatos.firebaseapp.com",
+  projectId: "gerenciador-contatos",
+  storageBucket: "gerenciador-contatos.appspot.com",
+  messagingSenderId: "956038790529",
+  appId: "1:956038790529:web:32362e8aa8c0433ca2fc80"
 };
 
 //app => objeto com todas as configurações do firebase

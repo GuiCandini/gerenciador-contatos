@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { logout } from "../firebase/auth";
 import { useContext } from "react";
 import { UsuarioContext } from "../contexts/UsuarioContext";
-
+import "./Menu.css";
 
 //Link: este componente habilita o SPA(Single-page application)
 //Se houver links externos, utilize a tag <a>
@@ -21,9 +21,9 @@ function Menu() {
 
     return (
         <header>
-            <Navbar bg="dark" variant="dark" expand="md">
+            <Navbar className="navbar" expand="md">
                 <Container fluid>
-                    <Link to="/"><img src="https://cdn.pixabay.com/photo/2017/09/29/00/30/checkmark-icon-2797531_640.png" width="32"/></Link>
+                    <Link to="/"><img src="./public/logo 2trab sema 6.png" width="32"/></Link>
                     <Navbar.Toggle />
                     <NavbarCollapse>
                         <Nav className="ms-auto">

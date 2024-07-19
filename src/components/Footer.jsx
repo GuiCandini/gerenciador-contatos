@@ -3,13 +3,13 @@ import "./Footer.css"
 
 function Rodape() {
     return (
-        <main>
             <footer className="footer text-center">
-                <Link className="nav-link" to="/politicas">Politicas de Privacidade</Link>
+                <Link className="nav-link" to="/politicas">
+                <p> “  Seus contatos, sempre organizados! ” </p>
+                </Link>
+                <Link to="/"><img src="./public/logo 2trab sema 6.png" width="20"/></Link>
+                <p1> “  Conteúdo protegido por direitos autorais © 2024 Contact Manager ” </p1>
             </footer>
-            
-        </main>
     );
 }
-
 export default Rodape;

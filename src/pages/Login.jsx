@@ -3,6 +3,7 @@ import {useForm} from "react-hook-form";
 import toast from "react-hot-toast";
 import { entrarGoogle, loginUsuario } from "../firebase/auth";
 import { useNavigate } from "react-router-dom";
+import "../components/Login.css";
 
 function Login() {
     const {register, handleSubmit, formState: {errors}} = useForm();
@@ -60,6 +61,10 @@ function Login() {
                 <Button onClick={handleEntrarGoogle} variant="outline-danger" className="mt-1 w-100" type="button">
                     Entrar com Google
                 </Button>
+                <div class="mLink">
+                    "Não possui conta?"
+                    <a href="/cadastro"> Criar conta </a>
+                </div>
             </form>
         </main>
     );

@@ -1,0 +1,13 @@
+
+.navbar {
+    background-color: #194775;
+    color: nav-link(--text-color aliceblue);
+}
+
+.navbar .nav-link {
+    color: aliceblue;
+}
+
+.Navbar navbar-toggler {
+    color: aliceblue;
+}

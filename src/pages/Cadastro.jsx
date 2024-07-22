@@ -61,7 +61,7 @@ function Cadastro() {
                     />
                     {errors.senha && <small className="invalid">Senha inválida.</small>}
                 </div>
-                <Button variant="outline-primary" className="mt-1 w-100" type="submit">
+                <Button variant="outline-primary" className="mt-3 w-100" type="submit">
                     Cadastrar
                 </Button>
                 <Button onClick={handleEntrarGoogle} variant="outline-danger" className="mt-1 w-100" type="button">

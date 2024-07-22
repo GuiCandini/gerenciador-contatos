@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
-import { getTarefa, updateTarefa } from "../firebase/tarefas";
+import { getContatos, updateContato } from "../firebase/contatos";
 import { useEffect, useContext } from "react";
 import { UsuarioContext } from "../contexts/UsuarioContext";
 
@@ -21,7 +21,7 @@ function EditarTarefa() {
   const navigate = useNavigate();
 
   function carregarDado() {
-    getTarefa(id).then((tarefa)=>{
+    getContatos(id).then((tarefa)=>{
         if(tarefa) {
             reset(tarefa);
         } else {

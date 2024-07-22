@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { addTarefa } from "../firebase/tarefas";
+import { addContato } from "../firebase/contatos";
 import toast from "react-hot-toast";
 import { useNavigate, Navigate } from "react-router-dom";
 import { useContext } from "react";
@@ -17,18 +17,18 @@ function NovaTarefa() {
 
   const navigate = useNavigate();
 
-  function salvarTarefa(data) {
+  function salvarContato(data) {
     //Novo campo no documento que associa o usuário e a tarefa que ele criou
     data.idUsuario = usuario.uid;
     
     //Os dados do formulário são passados para a função de inserir
     //then => aguarda a inserção da tarefa para então exibir o toast
-    addTarefa(data).then(() => {
-      toast.success("Tarefa adicionada com sucesso!");
+    addContato(data).then(() => {
+      toast.success("Contato Adicionado");
       //Redirecionar o usuário para /tarefas
-      navigate("/tarefas");
+      navigate("/contatos");
     }).catch(() => {
-      toast.error("Erro ao adicionar tarefa!")
+      toast.error("Erro inesperado ao adicioniar contato")
     })
   }
 
@@ -39,18 +39,18 @@ function NovaTarefa() {
 
   return (
     <main>
-      <form className="form-section" onSubmit={handleSubmit(salvarTarefa)}>
-        <h1>Adicionar tarefa</h1>
+      <form className="form-section" onSubmit={handleSubmit(salvarContato)}>
+        <h1>Adicionar Contato</h1>
         <hr />
         <div>
-          <label htmlFor="titulo">Título</label>
+          <label htmlFor="nome">Nome</label>
           <input 
             type="text" 
-            id="titulo" 
+            id="nome" 
             className="form-control"
-            {...register("titulo", { required: true, maxLength: 200 })}
+            {...register("nome", { required: true, maxLength: 200 })}
             />
-            {errors.titulo && <small className="invalid">O título é inválido!</small>}
+            {errors.titulo && <small className="invalid">o Nome é obrigatório</small>}
         </div>
         <div>
           <label htmlFor="descricao">Descrição</label>
@@ -96,7 +96,7 @@ function NovaTarefa() {
           </select>
         </div>
         <Button variant="dark" className="w-100 mt-3" type="submit">
-          Salvar Tarefa
+          Salvar
         </Button>
       </form>
     </main>

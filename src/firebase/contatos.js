@@ -9,59 +9,59 @@ import { addDoc, collection, deleteDoc, getDocs, doc, getDoc, updateDoc, query, 
 import { db } from "./config";
 
 //Criar uma referência para coleção no Firestore
-export const tarefasCol = collection(db, "tarefas");
+export const contatosCol = collection(db, "contatos");
 
 //Função assíncrona = o resultado não é obtido de imediato
 // Haverá uma "espera"
-export async function addTarefa(data) {
+export async function addContato(data) {
     //Essa função se comunica com o firestore, envia os dados(data) e salva na coleção indicada
-    await addDoc(tarefasCol, data);
+    await addDoc(contatosCol, data);
     //await é uma instrução para esperar o resultado de addDoc
 }
 
-export async function getTarefas() {
-    const snapshot = await getDocs(tarefasCol);
-    const tarefas = [];
+export async function getContatos() {
+    const snapshot = await getDocs(contatosCol);
+    const contatos = [];
 
     //Percorremos cada documento da coleção e inserimos no array de tarefas
     snapshot.forEach(doc => {
-        tarefas.push({...doc.data(), id: doc.id})
+        contatos.push({...doc.data(), id: doc.id})
     })
 
-    return tarefas;
+    return contatos;
 }
 
-export async function getTarefasUsuario(idUsuario) {
+export async function getContatosUsuario(idUsuario) {
     //filtrar as tarefas da coleção de acordo com o ID do usuário
-    const filtro = query(tarefasCol, where("idUsuario", '==', idUsuario));
+    const filtro = query(contatosCol, where("idUsuario", '==', idUsuario));
     const snapshot = await getDocs(filtro);
-    const tarefas = [];
+    const contatos = [];
 
     snapshot .forEach((doc) => {
-        tarefas.push({...doc.data(), id: doc.id});
+        contatos.push({...doc.data(), id: doc.id});
     });
 
-    return tarefas;
+    return contatos;
 }
 
-export async function deleteTarefa(id) {
+export async function deleteContato(id) {
     //Cria uma referência para um documento da coleção
-    const tarefaDoc = doc(tarefasCol, id);
+    const contatosDoc = doc(contatosCol, id);
     //Deletar o documento da coleção de acordo com o id
-    await deleteDoc(tarefaDoc);
+    await deleteDoc(contatosDoc);
 }
 
-export async function getTarefa(id){
+export async function getContato(id){
     //Criar uma referência para um documento específico da coleção
-    const tarefaDoc = doc(tarefasCol, id);
+    const contatosDoc = doc(contatosCol, id);
     // Trazer as informações do documento
-    const tarefa = await getDoc(tarefaDoc);
+    const Contato = await getDoc(contatosDoc);
 
     //Retorna os dados dentro do documento
-    return tarefa.data();
+    return Contato.data();
 }
 
-export async function updateTarefa(id, data) {
-    const tarefaDoc = doc(tarefasCol, id);
-    await updateDoc(tarefaDoc, data);
+export async function updateContato(id, data) {
+    const contatosDoc = doc(contatosCol, id);
+    await updateDoc(contatosDoc, data);
 }

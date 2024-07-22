@@ -10,6 +10,9 @@
 }
 
 main {
-    min-height: calc(4vh);
     width: 100%;
+}
+
+html {
+    padding-bottom: 90px;
 }

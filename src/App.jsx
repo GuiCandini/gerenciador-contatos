@@ -7,8 +7,8 @@ import NotFound from "./pages/NotFound";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Footer from "./components/Footer";
 import Politicas from "./pages/Politicas";
-import NovaTarefa from "./pages/NovaTarefa";
-import Tarefas from "./pages/Tarefas";
+import NovoContato from "./pages/NovoContato";
+import Contatos from "./pages/Contatos";
 import { Toaster } from "react-hot-toast";
 import EditarTarefa from "./pages/EditarTarefa";
 import { useEffect, useState } from "react";
@@ -46,9 +46,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/ajuda" element={<Ajuda />} />
-            <Route path="/tarefas" element={<Tarefas />} />
-            <Route path="/tarefas/adicionar" element={<NovaTarefa/>} />
-            <Route path="/tarefas/editar/:id" element={<EditarTarefa />} />
+            <Route path="/contatos" element={<Contatos />} />
+            <Route path="/contatos/adicionar" element={<NovoContato/>} />
+            <Route path="/contatos/editar/:id" element={<EditarTarefa />} />
             <Route path="/politicas" element={<Politicas />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

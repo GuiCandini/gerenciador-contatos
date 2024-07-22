@@ -30,9 +30,9 @@ function Menu() {
                             {usuario && <span className="text-light nav-link">{usuario.displayName}</span>}
                             {!usuario && <Link className="nav-link" to="/login">Login</Link>}
                             {!usuario && <Link className="nav-link" to="/cadastro">Cadastro</Link>}
-                            {usuario && <Link className="nav-link" to="/tarefas">Tarefas</Link>}
+                            {usuario && <Link className="nav-link" to="/contatos">Contatos</Link>}
                             <Link className="nav-link" to="/ajuda">Ajuda</Link>
-                            {usuario && <Button variant="outline-light" className="w-25" onClick={handleLogout}>
+                            {usuario && <Button variant="outline-light" className="mx-auto" onClick={handleLogout}>
                                 Logout
                             </Button>}
                         </Nav>

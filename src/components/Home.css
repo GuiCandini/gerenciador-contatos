@@ -15,5 +15,12 @@
     font-size: 30px;
     font-style:  italic ;
     margin: 0px;
-    padding: 0px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    margin: 16px;
 }

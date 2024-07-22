@@ -6,9 +6,9 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 89px;
-    position: fixed;
+    height: 90px;
     bottom: 0;
+    position: fixed;
 }
 
 .footer p {
@@ -19,7 +19,7 @@
     margin: 1px;
     padding: 1px;
 }
-.footer p1 {
+.footerP {
     text-align: center;
     font-size: 14px;
     color: aliceblue;

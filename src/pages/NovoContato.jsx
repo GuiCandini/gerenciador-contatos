@@ -53,49 +53,28 @@ function NovaTarefa() {
             {errors.titulo && <small className="invalid">o Nome é obrigatório</small>}
         </div>
         <div>
-          <label htmlFor="descricao">Descrição</label>
-          <textarea 
-            id="descricao" 
+          <label htmlFor="numero">Número de telefone</label>
+          <input
+            type="tel"
+            id="numero" 
             className="form-control"
-            {...register("descricao", { required: true })}
-            ></textarea>
-            {errors.descricao && <small className="invalid">A descrição é inválida!</small>}
+            {...register("numero", { required: true })}
+            />
+            {errors.numero && <small className="invalid">A descrição é inválida!</small>}
         </div>
         <div>
-          <label htmlFor="dataConclusao">Data</label>
-          <input 
-            type="date" 
-            id="dataConclusao" 
-            className="form-control" 
-            {...register("dataConclusao")}
-            />
-        </div>
-        <div className="form-check mt-2">
-          <input 
-            type="checkbox" 
-            id="concluido" 
-            className="form-check-input"
-            {...register("concluido")}
-            />
-          <label htmlFor="concluido" className="form-check-label">
-            Concluído?
-          </label>
-        </div>
-        <div>
-          <label htmlFor="categoria">Categoria</label>
+          <label htmlFor="categoria">Tipo</label>
           <select 
-            id="categoria" 
+            id="tipo" 
             className="form-select"
-            {...register("categoria")}
+            {...register("tipo")}
             >
-            <option value="Trabalho">Trabalho</option>
-            <option value="Estudos">Estudos</option>
-            <option value="Projetos">Projetos</option>
-            <option value="Lazer">Lazer</option>
-            <option value="Outros">Outros</option>
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="Fixo">Fixo</option>
+            <option value="Celular">Celular</option>
           </select>
         </div>
-        <Button variant="dark" className="w-100 mt-3" type="submit">
+        <Button variant="outline-primary" className="w-100 mt-3" type="submit">
           Salvar
         </Button>
       </form>

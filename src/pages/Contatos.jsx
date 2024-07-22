@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { UsuarioContext } from "../contexts/UsuarioContext";
+import '../components/Contatos.css'
 
 function Contatos() {
 
@@ -48,25 +49,25 @@ function Contatos() {
             <Container className="mt-3">
                 <h1>Seus Contatos</h1>
                 <hr />
-                <Link to="/contatos/adicionar" className="btn btn-outline-dark">
+                <Link to="/contatos/adicionar" className="btn btn-outline-primary">
                     Adicionar Contato
                 </Link>
-                {contatos ? <section className="mt-2">
+                {contatos ? <section className="mt-2" id="sectionteste"> 
                     {contatos.map((contato) => {
-                        return <Card key={contato.id} className="mb-2">
-                            <Card.Body>
-                                <Card.Title>{contato.titulo}</Card.Title>
-                                <Card.Text>{contato.descricao}</Card.Text>
-                                <div className="mb-2">
-                                    {contato.concluido ? <Badge bg="success">Concluído</Badge> : <Badge bg="warning">Pendente</Badge>}
-                                    <Badge className="ms-1">{contato.categoria}</Badge>
-                                    <Badge bg="secondary ms-1">{new Date(contato.dataConclusao).toLocaleDateString()}</Badge>
-                                </div>
-                                <Button variant="dark" onClick={()=>{
+                        return <Card key={contato.id} id="testedois" className="shadow p-3 mb-5 bg-white rounded border-none">
+                            <Container className="cardsContato">
+                                <Card.Body>
+                                <Card.Title className="text-center mb-2">{contato.nome}</Card.Title>
+                                <small className="fw-bold">Número:</small><Card.Text className="testeteste"> {contato.numero}</Card.Text>
+                                <small className="fw-bold">Tipo:</small><Card.Text> {contato.tipo}</Card.Text>
+                                <div className="mb-2"/>
+                                <Button variant="outline-dark" onClick={()=>{
                                     navigate(`/contatos/editar/${contato.id}`)
                                 }}>Editar</Button>
                                 <Button variant="outline-danger" onClick={() => deletarContato(contato.id)} className="ms-2">Excluir</Button>
                             </Card.Body>
+                            </Container>
+                            
                         </Card>
                     })}
                     </section> : <Loader />}

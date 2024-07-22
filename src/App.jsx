@@ -10,7 +10,7 @@ import Politicas from "./pages/Politicas";
 import NovoContato from "./pages/NovoContato";
 import Contatos from "./pages/Contatos";
 import { Toaster } from "react-hot-toast";
-import EditarTarefa from "./pages/EditarTarefa";
+import EditarContato from "./pages/EditarContato";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/config";
@@ -48,7 +48,7 @@ function App() {
             <Route path="/ajuda" element={<Ajuda />} />
             <Route path="/contatos" element={<Contatos />} />
             <Route path="/contatos/adicionar" element={<NovoContato/>} />
-            <Route path="/contatos/editar/:id" element={<EditarTarefa />} />
+            <Route path="/contatos/editar/:id" element={<EditarContato />} />
             <Route path="/politicas" element={<Politicas />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

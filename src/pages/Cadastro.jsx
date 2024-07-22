@@ -11,7 +11,7 @@ function Cadastro() {
     function cadastrar(data) {
         cadastrarUsuario(data.nome, data.email, data.senha).then(() => {
             toast.success(`Bem-vindo(a)! ${data.nome}`);
-            navigate("/tarefas");
+            navigate("/contatos");
         }).catch(() => {
             toast.error("Erro ao cadastrar!")
         });
@@ -20,14 +20,14 @@ function Cadastro() {
     function handleEntrarGoogle() {
         entrarGoogle().then(() => {
             toast.success("Bem vindo(a)!")
-            navigate("/tarefas");
+            navigate("/contatos");
         });
     }
 
     return (
         <main>
             <form className="form-section" onSubmit={handleSubmit(cadastrar)}>
-                <h1>Cadastro</h1>
+                <h1>Cadastre-se</h1>
                 <hr />
                 <div>
                     <label htmlFor="nome">Nome</label>
@@ -35,9 +35,10 @@ function Cadastro() {
                         type="text"
                         id="nome"
                         className="form-control"
+                        placeholder="Ex: José João"
                         {...register("nome", {required: true, maxLength:150})}
                     />
-                    {errors.nome && <small className="invalid">O nome é inválido!</small>}
+                    {errors.nome && <small className="invalid">Nome inválido.</small>}
                 </div>
                 <div>
                     <label htmlFor="email">Email</label>
@@ -45,9 +46,10 @@ function Cadastro() {
                         type="email"
                         id="email"
                         className="form-control"
+                        placeholder="exemplo@email.com"
                         {...register("email", {required: true})}
                     />
-                    {errors.email && <small className="invalid">O email é inválido!</small>}
+                    {errors.email && <small className="invalid">Email inválido.</small>}
                 </div>
                 <div>
                     <label htmlFor="senha">Senha</label>
@@ -57,9 +59,9 @@ function Cadastro() {
                         className="form-control"
                         {...register("senha", {required:true, minLength:6})}
                     />
-                    {errors.senha && <small className="invalid">A senha é inválida!</small>}
+                    {errors.senha && <small className="invalid">Senha inválida.</small>}
                 </div>
-                <Button variant="dark" className="mt-1 w-100" type="submit">
+                <Button variant="outline-primary" className="mt-1 w-100" type="submit">
                     Cadastrar
                 </Button>
                 <Button onClick={handleEntrarGoogle} variant="outline-danger" className="mt-1 w-100" type="button">

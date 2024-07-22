@@ -23,7 +23,7 @@ function Menu() {
         <header>
             <Navbar className="navbar" expand="md">
                 <Container fluid>
-                    <Link to="/"><img src="./public/logo 2trab sema 6.png" width="32"/></Link>
+                    <Link to="/"><img src="./public/logo 2trab sema 6.png" alt="Logo Contact Manager" width="32"/></Link>
                     <Navbar.Toggle />
                     <NavbarCollapse>
                         <Nav className="ms-auto">

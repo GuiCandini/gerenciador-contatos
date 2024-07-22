@@ -17,7 +17,7 @@ function Login() {
     function entrar(data) {
         loginUsuario(data.email, data.senha).then(() => {
             toast.success("Bem vindo(a)!");
-            navigate("/tarefas");
+            navigate("/contatos");
         }).catch(() => {
             toast.error("Email e/ou Senha incorreta!");
         });
@@ -26,7 +26,7 @@ function Login() {
     function handleEntrarGoogle() {
         entrarGoogle().then(() => {
             toast.success("Bem vindo(a)!")
-            navigate("/tarefas");
+            navigate("/contatos");
         });
     }
 
@@ -55,13 +55,13 @@ function Login() {
                     />
                     {errors.senha && <small className="invalid">{errors.senha.message}</small>}
                 </div>
-                <Button onClick={loginUsuario} variant="dark" className="mt-1 w-100" type="submit">
+                <Button onClick={loginUsuario} variant="outline-primary" className="mt-1 w-100" type="submit">
                     Entrar
                 </Button>
                 <Button onClick={handleEntrarGoogle} variant="outline-danger" className="mt-1 w-100" type="button">
                     Entrar com Google
                 </Button>
-                <div class="mLink">
+                <div class="mLink text-center">
                     "Não possui conta?"
                     <a href="/cadastro"> Criar conta </a>
                 </div>

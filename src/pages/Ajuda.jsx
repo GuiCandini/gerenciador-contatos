@@ -9,24 +9,26 @@ function Ajuda() {
                 <Accordion defaultActiveKey="">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>
-                            Sobre o nosso sistema
+                            Dúvidas Frequentes
                         </Accordion.Header>
                         <Accordion.Body>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ratione nesciunt et fuga nisi eligendi itaque voluptatum, impedit enim doloremque.
+                            A Central de Ajuda do Contact Manager oferece tutoriais, artigos de suporte, FAQs e vídeos para te ajudar a usar o aplicativo ao máximo. Você também pode entrar em contato com a equipe de suporte através do email ou chat online.
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>
-                            Sobre a empresa
+                            Entre em contato
                         </Accordion.Header>
                         <Accordion.Body>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio quisquam mollitia repellendus laborum aut error illo, maiores saepe laudantium reprehenderit possimus cumque, eius pariatur molestias?
+                            Ainda precisa de ajuda?
+                        Se você não encontrar a resposta para sua dúvida na Central de Ajuda, entre em contato com nossa equipe de suporte amigável. Estamos sempre à disposição para te auxiliar:<br/>
+                        <hr/>
+                        Email: comercial@contacManager.com.br<br/>
+                        Telefone: +55 (11) 9999-9999<br/>
+                        Chat Online: Acesse o <a target="_blank" href="*">chat online</a> no site do Contact Manager durante o horário comercial.<br/>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
-                <Button className="p-1 m-2">Entre em contato</Button>
-                <Button variant="outline-dark"> Botãozinho</Button>
-                <Alert variant="danger" className="mt-2">Atenção, estamos em manutenção</Alert>
             </Container>
         </main>
     );

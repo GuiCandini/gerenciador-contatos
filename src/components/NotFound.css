@@ -1,0 +1,16 @@
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.notfound img {
+  width: 320px;
+}
+
+.notfound a {
+  text-decoration: none;
+  color: white;
+}

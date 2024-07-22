@@ -1,0 +1,20 @@
+.cardsContato {
+  width: 480px;
+}
+
+#testedois {
+  width: 480px;
+  
+}
+
+#sectionteste {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.testeteste {
+  text-decoration: underline;
+}

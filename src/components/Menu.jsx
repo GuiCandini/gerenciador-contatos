@@ -6,9 +6,6 @@ import { useContext } from "react";
 import { UsuarioContext } from "../contexts/UsuarioContext";
 import "./Menu.css";
 
-//Link: este componente habilita o SPA(Single-page application)
-//Se houver links externos, utilize a tag <a>
-
 function Menu() {
     const usuario = useContext(UsuarioContext);
     const navigate = useNavigate();

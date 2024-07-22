@@ -18,11 +18,8 @@ function NovaTarefa() {
   const navigate = useNavigate();
 
   function salvarContato(data) {
-    //Novo campo no documento que associa o usuário e a tarefa que ele criou
     data.idUsuario = usuario.uid;
     
-    //Os dados do formulário são passados para a função de inserir
-    //then => aguarda a inserção da tarefa para então exibir o toast
     addContato(data).then(() => {
       toast.success("Contato Adicionado");
       //Redirecionar o usuário para /tarefas
@@ -33,7 +30,6 @@ function NovaTarefa() {
   }
 
   if(usuario === null) {
-    //Navegar para outra página
     return <Navigate to="/login"/>
 }
 

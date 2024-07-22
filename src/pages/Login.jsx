@@ -10,7 +10,6 @@ function Login() {
     const navigate = useNavigate();
 
     function entrar(data) {
-        //data é um objeto com os dados do formulário
         console.log(data);
     }
 

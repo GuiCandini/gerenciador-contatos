@@ -55,7 +55,7 @@ function Login() {
                     />
                     {errors.senha && <small className="invalid">{errors.senha.message}</small>}
                 </div>
-                <Button onClick={loginUsuario} variant="outline-primary" className="mt-1 w-100" type="submit">
+                <Button onClick={loginUsuario} variant="outline-primary" className="mt-3 w-100" type="submit">
                     Entrar
                 </Button>
                 <Button onClick={handleEntrarGoogle} variant="outline-danger" className="mt-1 w-100" type="button">
